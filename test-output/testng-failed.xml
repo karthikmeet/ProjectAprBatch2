@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="data" value="https://www.facebook.com/"/>
-  <test thread-count="5" name="EdgeTest(failed)">
-    <parameter name="browser" value="edge"/>
+  <listeners>
+    <listener class-name="org.pageexecution.UnknownFailedTestCaseRerun"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="org.pageexecution.LoginPageExe">
+      <class name="org.pageexecution.UnknownFailures">
         <methods>
-          <include name="beforeTest"/>
-          <include name="beforeMethod"/>
-          <include name="method"/>
+          <include name="test4"/>
         </methods>
-      </class> <!-- org.pageexecution.LoginPageExe -->
+      </class> <!-- org.pageexecution.UnknownFailures -->
+      <class name="org.pageexecution.KnownFailures">
+        <methods>
+          <include name="test2"/>
+        </methods>
+      </class> <!-- org.pageexecution.KnownFailures -->
     </classes>
-  </test> <!-- EdgeTest(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

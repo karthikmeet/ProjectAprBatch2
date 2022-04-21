@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<parameter name="data" value="https://www.facebook.com/"></parameter>
-	<test thread-count="5" name="ChromeTest">
-		<parameter name="browser" value="chrome"></parameter>
+	<listeners>
+		<listener class-name="org.pageexecution.UnknownFailedTestCaseRerun"></listener>
+	</listeners>
+
+	<test thread-count="5" name="Test">
 		<classes>
-			<class name="org.pageexecution.LoginPageExe"></class>
-			<class name="org.pageexecution.LoginPageExe2"></class>
+			<class name="org.pageexecution.UnknownFailures" />
+			<class name="org.pageexecution.KnownFailures" />
 		</classes>
-	</test>
-</suite>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
